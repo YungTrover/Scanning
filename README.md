@@ -1,0 +1,1 @@
+This is a scanner that can be used to scan ports on a machine, take those open scanned ports, then run a number of different scripts on the target
