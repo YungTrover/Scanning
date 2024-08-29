@@ -16,7 +16,7 @@ def main():
     parser.add_argument("-k", "--nikto", action="store_true", help="Run Nikto on the target")
     parser.add_argument("-g", "--gobuster", action="store_true", help="Run Gobuster on the target")
     parser.add_argument("-p", "--port", type=int, help="Specify port to run Nikto and Gobuster (default: 80)")
-    parser.add_argument("-o", "--output", help="Specify output log file (optional)")
+    parser.add_argument("-o", "--output", default="scan_results.log", help="Specify output log file (optional)")
 
     args = parser.parse_args()
 
@@ -54,6 +54,10 @@ def main():
         with open(output_file, 'w') as file:
             file.write(output)
         print(f"\nResults saved to {output_file}")
+    else:
+        with open(output_file, 'w') as file:
+            file.write(output)
+        print(f"\n Results saved to scan_results.log")
 
 if __name__ == "__main__":
     main()
