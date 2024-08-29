@@ -40,7 +40,7 @@ def main():
     if args.output:
         log_and_run(log_file)
 
-    print("Scanning Complete. Results saved to ", log_file)
+    print("Scanning Complete. Results saved")
 
 
 if __name__ == "__main__":
