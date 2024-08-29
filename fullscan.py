@@ -14,7 +14,7 @@ def main():
     parser.add_argument("target" , help="Target IP or hostname you are trying to scan")
     parser.add_argument("-n", "--nmap", action="store_true", help="Run an nmap scan on the open ports found")
     parser.add_argument("-k", "--nikto", action="store_true", help="Run a nikto scan on the main website")
-    parser.add_argument("-g", "--gobuster", nargs="*", action="store_true", help="Run agobuster scan to find subdirectories on the target")
+    parser.add_argument("-g", "--gobuster", action="store_true", help="Run agobuster scan to find subdirectories on the target")
     parser.add_argument("-p", "--port", type=int, help="Specify the port to run nikto and Gobuser on (Default is 80).")
     parser.add_argument("-o", "--output", default="scan_results.log", help="Specify an output location for the results (Default= scan_results.log).")
 
