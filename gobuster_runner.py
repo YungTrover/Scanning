@@ -1,7 +1,7 @@
 import subprocess
-from output import log_and_run 
+ 
 
-def run_gobuster(target, port, log_file):
+def run_gobuster(target, port):
     print(f"Running Gobuster on {target}")
     default_wordlist = "/usr/share/wordlists/dirb/common.txt"
     use_custom_wordlist = input("Would you like to use a custom wordlist? (y/N)").strip().lower() == "y"
@@ -13,4 +13,4 @@ def run_gobuster(target, port, log_file):
         wordlist = default_wordlist
 
     command = ["gobuster", "dir", "-u ", f"http://{target}:{port}", " -w" , wordlist ]
-    log_and_run(command, log_file)
+    subprocess.run(command)

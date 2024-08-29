@@ -1,6 +1,6 @@
 import subprocess
 
-def log_and_run(command, section_name, log_file):
+def log_and_run(command,log_file):
     """
     Runs a command and logs the output to both the console and a file.
 
@@ -12,7 +12,6 @@ def log_and_run(command, section_name, log_file):
     with open(log_file, 'a') as file:
         # Write the section divider
         file.write("\n" + "=" * 50 + "\n")
-        file.write(f"{section_name}\n")
         file.write("=" * 50 + "\n\n")
 
         # Run the command

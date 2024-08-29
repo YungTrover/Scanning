@@ -6,7 +6,7 @@ from port_scanner import port_scan
 from nmap_runner import run_nmap
 from gobuster_runner import run_gobuster
 from nikto_runner import run_nikto
-import output
+from output import log_and_run
 
 
 def main():
@@ -29,14 +29,16 @@ def main():
 
 
     if args.nmap:
-        run_nmap(target, open_ports, log_file)
+        run_nmap(target, open_ports)
 
     if args.nikto:
-        run_nikto(target, port, log_file)
+        run_nikto(target, port)
 
     if args.gobuster:
-        run_gobuster(target, port, log_file)
+        run_gobuster(target, port)
 
+    if args.output:
+        log_and_run(log_file)
 
     print("Scanning Complete. Results saved to ", log_file)
 
