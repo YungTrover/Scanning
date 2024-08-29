@@ -1,6 +1,7 @@
+import sys
 import argparse
 import subprocess
-from port_scanner import scan_ports
+from port_scanner import port_scan
 from nmap_runner import run_nmap
 from nikto_runner import run_nikto
 from gobuster_runner import run_gobuster
@@ -27,7 +28,7 @@ def main():
     output = ""
 
     # Always run port scan
-    open_ports = scan_ports(target)
+    open_ports = port_scan(target)
     output += f"\nPorts found open: {', '.join(str(port) for port in open_ports)}\n"
 
     # Conditionally run nmap if -n flag is set
