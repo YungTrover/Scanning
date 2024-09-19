@@ -44,7 +44,7 @@ def main():
     # Conditionally run Gobuster if -g flag is set
     if args.gobuster:
         output += "\n" + "=" * 50 + "\nGobuster Scan Results\n" + "=" * 50 + "\n"
-        wordlist = "/path/to/default/wordlist.txt"  # Update this path as needed
+        wordlist = "/usr/share/wordlists/dirb/common.txt"  # Update this path as needed
         output += capture_output(["gobuster", "dir", "-u", f"http://{target}:{port}", "-w", wordlist])
 
     # Print output to console
