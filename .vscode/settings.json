@@ -1,5 +1,8 @@
 {
     "files.readonlyInclude": {
         "{**/.c4z/.extsrcs/*.PROTSYM.cbl,**/.c4z/.extsrcs/*.PROTSYM.listing}": true
-    }
+    },
+    "githubPullRequests.ignoredPullRequestBranches": [
+        "BEST_WORKING_FOR_NOW"
+    ]
 }
